@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="theme-color"
+      content="#eef0fb"
+    />
+    <meta
+      name="description"
+      content="A simple, polished ping pong scorekeeper for your next match."
+    />
+    <title>Rally | Ping Pong Scorekeeper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="Rally home">
+          <span class="brand-mark" aria-hidden="true">
+            <span></span>
+            <span></span>
+          </span>
+          <span>rally<span class="brand-period">.</span></span>
+        </a>
+        <div class="live-indicator">
+          <span class="live-dot" aria-hidden="true"></span>
+          <span id="gameStatus">MATCH IN PROGRESS</span>
+        </div>
+      </header>
+
+      <section class="match-section" aria-labelledby="page-title">
+        <div class="intro">
+          <p class="eyebrow">THE TABLE IS YOURS</p>
+          <h1 id="page-title">Keep the rally<br />going.</h1>
+          <p class="intro-copy">Good games deserve a great scorekeeper.</p>
+        </div>
+
+        <section class="scoreboard" aria-label="Ping pong scoreboard">
+          <div class="scoreboard-top">
+            <div>
+              <p class="card-kicker">SINGLES MATCH</p>
+              <p class="match-name">Friendly game</p>
+            </div>
+            <span class="game-pill">
+              FIRST TO <strong id="targetDisplay">5</strong>
+            </span>
+          </div>
+
+          <div class="score-row" aria-live="polite" aria-atomic="true">
+            <div class="player-score">
+              <span class="player-label">PLAYER 01</span>
+              <span class="player-name">Player 1</span>
+              <span class="score-number" id="p1Display">0</span>
+            </div>
+            <span class="score-divider" aria-hidden="true">:</span>
+            <div class="player-score player-score-right">
+              <span class="player-label">PLAYER 02</span>
+              <span class="player-name">Player 2</span>
+              <span class="score-number" id="p2Display">0</span>
+            </div>
+          </div>
+
+          <div class="scoreboard-bottom">
+            <span class="scoreboard-caption">POINTS THIS GAME</span>
+            <span class="table-lines" aria-hidden="true"></span>
+          </div>
+        </section>
+
+        <section class="controls" aria-label="Match controls">
+          <div class="control-heading">
+            <div>
+              <h2>Make it count.</h2>
+              <p>Tap a player when they win a point.</p>
+            </div>
+            <div class="target-control">
+              <label for="playto">PLAY TO</label>
+              <div class="select-wrap">
+                <select id="playto" name="playto">
+                  <option value="3">3 points</option>
+                  <option value="5" selected>5 points</option>
+                  <option value="7">7 points</option>
+                  <option value="9">9 points</option>
+                </select>
+                <span aria-hidden="true">⌄</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button id="p1Button" class="point-button point-button-one" type="button">
+              <span class="button-icon" aria-hidden="true">＋</span>
+              <span>Player 1 scores</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+            <button id="p2Button" class="point-button point-button-two" type="button">
+              <span class="button-icon" aria-hidden="true">＋</span>
+              <span>Player 2 scores</span>
+              <span class="button-arrow" aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <button id="resetButton" class="reset-button" type="button">
+            <span aria-hidden="true">↺</span>
+            Reset match
+          </button>
+        </section>
+
+        <footer class="page-footer">
+          <span>MADE FOR THE LOVE OF THE GAME</span>
+          <span class="footer-ball" aria-hidden="true"></span>
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
